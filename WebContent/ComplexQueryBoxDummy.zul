@@ -1,0 +1,83 @@
+<?page id="testZul" title="RuleEdit" cacheable="false"
+    language="xul/html" zscriptLanguage="Java" contentType="text/html;charset=UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
+<zk>
+	<groupbox mold="3d" style="padding-top: 10px;">
+		<caption label="Komplexe Abfrage" width="650px" />
+		<grid>
+			<rows>
+				<row>
+					<checkbox />
+					<label value="Dienstplan" />
+					<combobox></combobox>
+				</row>
+				<row>
+					<checkbox />
+					<label value="Teamart" />
+					<hbox>
+						<checkbox />
+						NEF
+						<checkbox />
+						RTW
+						<checkbox />
+						Bereitschaft
+					</hbox>
+				</row>
+				<row>
+					<checkbox />
+					<label value="Dienstart" />
+					<hbox>
+						<checkbox />
+						Fahrer
+						<checkbox />
+						Sanitäter
+						<checkbox />
+						Probehelfer
+					</hbox>
+				</row>
+				<row>
+					<checkbox></checkbox>
+					<label value="Zeitraum" />
+					<hbox>
+						zwischen
+						<datebox />
+						und
+						<datebox />
+					</hbox>
+				</row>
+				<row>
+					<checkbox></checkbox>
+					<label value="Schichtart" />
+					<hbox>
+						<radiogroup>
+							<radio />
+							Nachtschicht
+							<radio />
+							Tagschicht
+						</radiogroup>
+					</hbox>
+				</row>
+				<row>
+					<checkbox />
+					<label value="Tag" />
+					<hbox>
+						<checkbox />
+						MO
+						<checkbox />
+						DI
+						<checkbox />
+						MI
+						<checkbox />
+						DO
+						<checkbox />
+						FR
+						<checkbox />
+						SA
+						<checkbox />
+						SO
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+	</groupbox>
+</zk>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jasperReport PUBLIC "-//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport name="RTW-Plan" pageWidth="842" pageHeight="595" leftMargin="20" rightMargin="20" topMargin="20"
+	bottomMargin="20" columnWidth="802">
+	<parameter name="PlanId" class="java.lang.String"></parameter>
+	<parameter name="DateHead" class="java.lang.String"></parameter>
+	<parameter name="Period" class="java.lang.String"></parameter>
+	<parameter name="JasperPath" class="java.lang.String"></parameter>
+	<pageHeader>
+		<band height="100">
+        <!-- Logo Start -->
+			<image hyperlinkType="None">
+				<reportElement x="0" y="0" width="195" height="84" />
+				<imageExpression class="java.lang.String"><![CDATA[$P{JasperPath} + "images/rclogo.jpg"]]>
+				</imageExpression>
+			</image>
+        <!-- Logo END -->
+        <!-- Diensttype Start -->
+			<staticText>
+				<reportElement mode="Opaque" x="210" y="30" width="70"
+					height="28" backcolor="red" />
+				<box>
+					<pen lineWidth="0.0" lineStyle="Solid" />
+				</box>
+				<textElement verticalAlignment="Middle" textAlignment="Center"
+					isStyledText="true">
+					<font fontName="Arial" size="22"
+						pdfFontName="/opt/eclipse_Helios/workspace/Helios/WebContent/fonts/arialbd.ttf"
+						isPdfEmbedded="true" isBold="true" />
+				</textElement>
+				<text><![CDATA[<style forecolor="#ffffff">RTW</style>]]></text>
+			</staticText>
+        <!-- Diensttype END -->
+        <!-- MiddleBox Start -->
+			<staticText>
+				<reportElement mode="Opaque" x="295" y="0" width="250"
+					height="28" backcolor="#000000" forecolor="#ffffff" />
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#000000" />
+					<bottomPen lineWidth="0.0" lineStyle="Solid" />
+				</box>
+				<textElement verticalAlignment="Middle" textAlignment="Center">
+					<font fontName="Arial" size="20" isBold="true"
+						pdfFontName="/opt/eclipse_Helios/workspace/Helios/WebContent/fonts/arialbd.ttf"
+						isPdfEmbedded="true" />
+				</textElement>
+				<text><![CDATA[DIENSTPLAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="295" y="28" width="250"
+					height="28" backcolor="#999999" forecolor="#ffffff" />
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#000000" />
+					<topPen lineWidth="0.0" lineStyle="Solid" />
+					<bottomPen lineWidth="0.0" lineStyle="Solid" />
+				</box>
+				<textElement verticalAlignment="Middle" textAlignment="Center">
+					<font fontName="Arial" size="16" isBold="true"
+						pdfFontName="/opt/eclipse_Helios/workspace/Helios/WebContent/fonts/arialbd.ttf"
+						isPdfEmbedded="true" />
+				</textElement>
+				<text><![CDATA[BLUDENZ]]></text>
+			</staticText>
+			<textField hyperlinkType="None">
+				<reportElement mode="Opaque" x="295" y="56" width="250"
+					height="28" backcolor="#ffffff" />
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" />
+					<topPen lineWidth="0.0" lineStyle="Solid" />
+				</box>
+				<textElement verticalAlignment="Middle" textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true"
+						pdfFontName="/opt/eclipse_Helios/workspace/Helios/WebContent/fonts/arialbd.ttf"
+						isPdfEmbedded="true" />
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{DateHead}]]></textFieldExpression>
+			</textField>
+			
+            <!-- MiddleBox END -->
+            <!-- RightBox START -->
+			<staticText>
+				<reportElement mode="Opaque" x="590" y="0" width="200"
+					height="84" />
+				<box>
+					<pen lineWidth="0.0" lineStyle="Solid" />
+				</box>
+				<textElement verticalAlignment="Bottom" textAlignment="Left"
+					isStyledText="true">
+					<font fontName="Arial" size="9" isPdfEmbedded="true"
+						pdfFontName="/opt/eclipse_Helios/workspace/Helios/WebContent/fonts/arial.ttf"
+						isBold="false" />
+				</textElement>
+				<text><![CDATA[<style isBold="true" pdfFontName="/opt/eclipse_Helios/workspace/Helios/WebContent/fonts/arialbd.ttf" size="10">Nachtdienste</style>
+RTW 1 + RTW 2 (19:00 – 06:00 Uhr)
+<style isBold="true" pdfFontName="/opt/eclipse_Helios/workspace/Helios/WebContent/fonts/arialbd.ttf" size="10">Tagdienste</style>
+Dienst I , II + Bereitschaft  (08:00 – 19:00 Uhr)
+<style isBold="true" pdfFontName="/opt/eclipse_Helios/workspace/Helios/WebContent/fonts/arialbd.ttf" size="10">RS</style>…Rettungssanitäter, <style isBold="true" pdfFontName="/opt/eclipse_Helios/workspace/Helios/WebContent/fonts/arialbd.ttf" size="10">EF</style>…Einsatzfahrer,
+<style isBold="true" pdfFontName="/opt/eclipse_Helios/workspace/Helios/WebContent/fonts/arialbd.ttf" size="10">PH</style>…Probehelfer
+                
+                ]]></text>
+			</staticText>
+            <!-- RightBox END -->
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="60">
+			<staticText>
+				<reportElement x="0" y="0" width="330" height="20" />
+				<box>
+					<topPen lineWidth="1.1" lineStyle="Solid" />
+					<leftPen lineWidth="1.1" lineStyle="Solid" />
+					<bottomPen lineWidth="1.1" lineStyle="Solid" />
+					<rightPen lineWidth="1.1" lineStyle="Solid" />
+				</box>
+				<textElement verticalAlignment="Middle" textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"
+						pdfFontName="/opt/eclipse_Helios/workspace/Helios/WebContent/fonts/arialbd.ttf"
+						isPdfEmbedded="true" />
+				</textElement>
+				<text><![CDATA[Nachtdienste]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="0" width="465" height="20" />
+				<box>
+					<topPen lineWidth="1.1" lineStyle="Solid" />
+					<leftPen lineWidth="0.0" lineStyle="Solid" />
+					<bottomPen lineWidth="1.1" lineStyle="Solid" />
+					<rightPen lineWidth="1.1" lineStyle="Solid" />
+				</box>
+				<textElement verticalAlignment="Middle" textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"
+						pdfFontName="/opt/eclipse_Helios/workspace/Helios/WebContent/fonts/arialbd.ttf"
+						isPdfEmbedded="true" />
+				</textElement>
+				<text><![CDATA[Tagdienste]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="20" height="40" />
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" />
+					<leftPen lineWidth="1.1" lineStyle="Solid" />
+					<bottomPen lineWidth="1.1" lineStyle="Solid" />
+					<rightPen lineWidth="1.1" lineStyle="Solid" />
+				</box>
+				<textElement verticalAlignment="Middle" textAlignment="Center"
+					rotation="Left">
+					<font fontName="Arial" size="9" isBold="true"
+						pdfFontName="/opt/eclipse_Helios/workspace/Helios/WebContent/fonts/arialbd.ttf"
+						isPdfEmbedded="true" />
+				</textElement>
+				<text><![CDATA[Datum]]></text>
+			</staticText>
+			<subreport isUsingCache="true">
+				<reportElement x="20" y="20" width="155" height="40"
+					key="subreport-1" />
+				<subreportParameter name="Shift">
+					<subreportParameterExpression><![CDATA["RTW1"]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{JasperPath} + "JRXML/heading.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement x="175" y="20" width="155" height="40"
+					key="subreport-1" />
+				<subreportParameter name="Shift">
+					<subreportParameterExpression><![CDATA["RTW2"]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{JasperPath} + "JRXML/heading.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement x="330" y="20" width="155" height="40"
+					key="subreport-1" />
+				<subreportParameter name="Shift">
+					<subreportParameterExpression><![CDATA["Dienst I"]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{JasperPath} + "JRXML/heading.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement x="485" y="20" width="155" height="40"
+					key="subreport-1" />
+				<subreportParameter name="Shift">
+					<subreportParameterExpression><![CDATA["Dienst II"]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{JasperPath} + "JRXML/heading.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement x="640" y="20" width="155" height="40"
+					key="subreport-1" />
+				<subreportParameter name="Shift">
+					<subreportParameterExpression><![CDATA["Dienst III"]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{JasperPath} + "JRXML/heading.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="372">
+			<subreport isUsingCache="true">
+				<reportElement x="0" y="0" width="20" height="372"
+					key="Date" />
+				<dataSourceExpression><![CDATA[new at.helios.jasper.DataSource("Date",$P{PlanId}, $P{Period})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{JasperPath} + "JRXML/Date.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement x="20" y="0" width="155" height="372"
+					key="RTW-1" />
+				<dataSourceExpression><![CDATA[new at.helios.jasper.DataSource("rtwn1",$P{PlanId}, $P{Period})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{JasperPath} + "JRXML/Data.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement x="175" y="0" width="155" height="372"
+					key="RTW-2" />
+				<dataSourceExpression><![CDATA[new at.helios.jasper.DataSource("rtwn2",$P{PlanId}, $P{Period})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{JasperPath} + "JRXML/Data.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement x="330" y="0" width="155" height="372"
+					key="Dienst-I" />
+				<dataSourceExpression><![CDATA[new at.helios.jasper.DataSource("rtwd1",$P{PlanId}, $P{Period})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{JasperPath} + "JRXML/Data.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement x="485" y="0" width="155" height="372"
+					key="Dienst-II" />
+				<dataSourceExpression><![CDATA[new at.helios.jasper.DataSource("rtwd2",$P{PlanId}, $P{Period})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{JasperPath} + "JRXML/Data.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement x="640" y="0" width="155" height="372"
+					key="Dienst-III" />
+				<dataSourceExpression><![CDATA[new at.helios.jasper.DataSource("rtwd3",$P{PlanId}, $P{Period})]]></dataSourceExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[$P{JasperPath} + "JRXML/Data.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

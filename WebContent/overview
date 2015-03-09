@@ -1,0 +1,13 @@
+<?page title="[Helios] Übersicht" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<zscript>
+if(!at.helios.security.AuthenticationManager.isValidSession())
+{
+	Executions.forward("/invalid_session.zul");
+}
+	</zscript>
+	<div
+		style="margin: 0 auto; width: 616px; padding-top:10%; vertical-align: middle;">
+		<hbox use="at.helios.common.OverViewBox" style="padding: 20px"></hbox>
+	</div>
+</zk>

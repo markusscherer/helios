@@ -1,0 +1,210 @@
+date_day(d01102008,wednesday).
+date_day(d02102008,thursday).
+date_day(d03102008,friday).
+date_day(d04102008,saturday).
+date_day(d05102008,sunday).
+date_day(d06102008,monday).
+date_day(d07102008,tuesday).
+date_day(d08102008,wednesday).
+date_day(d09102008,thursday).
+date_day(d10102008,friday).
+date_day(d11102008,saturday).
+date_day(d12102008,sunday).
+date_day(d13102008,monday).
+date_day(d14102008,tuesday).
+date_day(d15102008,wednesday).
+date_day(d16102008,thursday).
+date_day(d17102008,friday).
+date_day(d18102008,saturday).
+date_day(d19102008,sunday).
+date_day(d20102008,monday).
+date_day(d21102008,tuesday).
+date_day(d22102008,wednesday).
+date_day(d23102008,thursday).
+date_day(d24102008,friday).
+date_day(d25102008,saturday).
+date_day(d26102008,sunday).
+date_day(d27102008,monday).
+date_day(d28102008,tuesday).
+date_day(d29102008,wednesday).
+date_day(d30102008,thursday).
+date_day(d31102008,friday).
+date_day(d01112008,saturday).
+date_day(d02112008,sunday).
+date_day(d03112008,monday).
+date_day(d04112008,tuesday).
+date_day(d05112008,wednesday).
+date_day(d06112008,thursday).
+date_day(d07112008,friday).
+date_day(d08112008,saturday).
+date_day(d09112008,sunday).
+date_day(d10112008,monday).
+date_day(d11112008,tuesday).
+date_day(d12112008,wednesday).
+date_day(d13112008,thursday).
+date_day(d14112008,friday).
+date_day(d15112008,saturday).
+date_day(d16112008,sunday).
+date_day(d17112008,monday).
+date_day(d18112008,tuesday).
+date_day(d19112008,wednesday).
+date_day(d20112008,thursday).
+date_day(d21112008,friday).
+date_day(d22112008,saturday).
+date_day(d23112008,sunday).
+date_day(d24112008,monday).
+date_day(d25112008,tuesday).
+date_day(d26112008,wednesday).
+date_day(d27112008,thursday).
+date_day(d28112008,friday).
+date_day(d29112008,saturday).
+date_day(d30112008,sunday).
+date_day(d01122008,monday).
+date_day(d02122008,tuesday).
+date_day(d03122008,wednesday).
+date_day(d04122008,thursday).
+date_day(d05122008,friday).
+date_day(d06122008,saturday).
+date_day(d07122008,sunday).
+date_day(d08122008,monday).
+date_day(d09122008,tuesday).
+date_day(d10122008,wednesday).
+date_day(d11122008,thursday).
+date_day(d12122008,friday).
+date_day(d13122008,saturday).
+date_day(d14122008,sunday).
+date_day(d15122008,monday).
+date_day(d16122008,tuesday).
+date_day(d17122008,wednesday).
+date_day(d18122008,thursday).
+date_day(d19122008,friday).
+date_day(d20122008,saturday).
+date_day(d21122008,sunday).
+date_day(d22122008,monday).
+date_day(d23122008,tuesday).
+date_day(d24122008,wednesday).
+date_day(d25122008,thursday).
+date_day(d26122008,friday).
+date_day(d27122008,saturday).
+date_day(d28122008,sunday).
+date_day(d290122008,monday).
+
+neff(neff1).
+person_likesdate(neff1,d10102008).
+person_likesdate(neff1,d20102008).
+person_likesdate(neff1,d30102008).
+%person_friend(neff1, nefs1).
+
+nefs(nefs1).
+person_likesdate(nefs1,d10102008).
+person_likesdate(nefs1,d20102008).
+person_likesdate(nefs1,d30112008).
+%person_friend(nefs1, neff1).
+
+rtwf(p1).
+rtws(p1).
+person_likesday(p1,wednesday).
+person_likesday(p1,monday).
+
+neff(p2).
+rtws(p2).
+person_friend(p2, p3).
+
+neff(p3).
+person_notlikesdate(p3,d20122008).
+person_friend(p3, p2).
+person_notlikesday(p3,tuesday).
+
+rtwf(p4).
+rtws(p4).
+person_likesday(p4,thursday).
+person_likesdate(p4,d02112008).
+
+rtwf(p5).
+rtws(p5).
+person_likesdate(p5,d24112008).
+person_likesdate(p5,d09112008).
+
+nefs(p6).
+person_friend(p6, p2).
+person_notlikesday(p6,wednesday).
+
+neff(p7).
+nefs(p7).
+person_notlikesday(p7,monday).
+person_notfriend(p7, p5).
+
+neff(p8).
+rtws(p8).
+person_likesdate(p8,d30102008).
+person_notlikesday(p8,sunday).
+
+neff(p9).
+rtwf(p9).
+person_notfriend(p9, p5).
+person_likesday(p9,sunday).
+
+neff(p10).
+person_friend(p10, p8).
+person_notlikesdate(p10,d02112008).
+
+neff(p11).
+nefs(p11).
+person_notfriend(p11, p3).
+person_notfriend(p11, p1).
+
+rtwf(p12).
+nefs(p12).
+person_notlikesdate(p12,d01112008).
+person_friend(p12, p2).
+
+neff(p13).
+nefs(p13).
+person_likesdate(p13,d30102008).
+person_likesday(p13,sunday).
+
+person_validdate(X, DATE) :-
+	\+ person_likesdate(X,_),
+	\+ person_notlikesdate(X,DATE).
+
+person_validdate(X, DATE) :-
+	person_likesdate(X,DATE).
+
+person_validday(X,DAY) :-
+	\+ person_likesday(X,_),
+	\+ person_notlikesday(X,DAY).
+
+person_validday(X,DAY) :-
+	person_likesday(X,DAY).
+
+person_validpartner(X,PARTNER) :-
+	\+ person_friend(X,_),
+	\+ person_notfriend(X,PARTNER).
+
+person_validpartner(X,PARTNER) :-
+	person_friend(X,PARTNER).
+
+neff_nefs_team_date(NEFF, NEFS, DATE) :-
+	date_day(DATE,DAY),
+	neff(NEFF),
+	nefs(NEFS),
+	NEFF \= NEFS,
+	person_validdate(NEFF,DATE),
+	person_validdate(NEFS, DATE),
+	person_validday(NEFF, DAY),
+	person_validday(NEFS, DAY),
+	person_validpartner(NEFF, NEFS),
+	person_validpartner(NEFS, NEFF).
+
+rtwf_rtws_team_date(RTWF, RTWS, DATE) :-
+	date_day(DATE,DAY),
+	rtwf(RTWF),
+	rtws(RTWS),
+	RTWF \= RTWS,
+	person_validdate(RTWF,DATE),
+	person_validdate(RTWS, DATE),
+	person_validday(RTWF, DAY),
+	person_validday(RTWS, DAY),
+	person_validpartner(RTWF, RTWS),
+	person_validpartner(RTWS, RTWF).
+

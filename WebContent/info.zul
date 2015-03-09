@@ -1,0 +1,78 @@
+<?page title="[Helios] Information" contentType="text/html;charset=UTF-8"?>
+<zk>
+<zscript>
+
+		void redirect() {
+		if(!at.helios.security.AuthenticationManager.isValidSession()) {
+		Executions.sendRedirect(at.helios.common.RedirectHelper.getLoginLink()); } };
+
+	  	String IMAGE_STATUS_OK     = "/design/status_ok.png";
+		String IMAGE_STATUS_NOTOK  = "/design/status_notok.png";
+		String sConnectionStatus = "Datenbankverbindung erfolgreich.";
+		String sConnectionStatusImage = IMAGE_STATUS_OK;
+		if(at.helios.common.DBHelper.getConnection() == null)
+		{
+			 sConnectionStatus = "Datenbankverbindung nicht erfolgreich.";
+			 sConnectionStatusImage = IMAGE_STATUS_NOTOK;
+		}
+		
+		at.helios.model.Department oDepartment = (at.helios.model.Department) Sessions.getCurrent().getAttribute("department");
+		
+		String sLoginStatus = "Sie sind an keiner Dienststelle angemeldet.";
+		String sLoginStatusImage = IMAGE_STATUS_NOTOK;
+		
+		int iPersonCount = 0;
+		
+		if(oDepartment != null)
+		{
+			sLoginStatus = "Sie sind an der Dienststelle \"" + oDepartment.getName() + "\"angemeldet.";
+			sLoginStatusImage = IMAGE_STATUS_OK;
+			
+			iPersonCount = at.helios.model.Person.getPersonsByDepartment(oDepartment).size();
+			
+			sLoginStatus += " Sie verwalten " + iPersonCount + " Personen.";
+		}
+		
+		String sFontStatus = "";
+		String sFontStatusImage = IMAGE_STATUS_NOTOK;
+		
+		try
+		{
+			String sTemp = sun.font.FontManager.getDefaultPhysicalFont().getFontName(null);
+			sFontStatusImage = IMAGE_STATUS_OK;
+			sFontStatus = "Standardfont vorhanden: " + sTemp;
+		}
+		catch(Exception e)
+		{
+			sFontStatusImage = IMAGE_STATUS_NOTOK;
+			sFontStatus = "Standardfont konnte nicht ermittelt werden.";
+		}
+		
+		
+		
+</zscript>
+<div
+		style="margin: 0 auto; width: 750px; padding-top:10%; vertical-align: middle;">
+	<window title="[Helios] Information" border="normal">
+			<label style="font-weight: bold">Helios Shift Scheduler, Informationskonsole</label>
+			<separator/>
+			<image src="${sConnectionStatusImage}"/><label style="margin-left: 3px">${sConnectionStatus}</label>
+			<separator/>
+			<image src="${sLoginStatusImage}"/><label style="margin-left: 3px">${sLoginStatus}</label>
+			<separator/>
+			<image src="${sFontStatusImage}"/><label style="margin-left: 3px">${sFontStatus}</label>
+			<separator height="20px"/>
+			<label style="font-weight: bold">Erklärung</label>
+			<separator height="3px"/>
+			<label>Wenn keine Verbindung hergestellt werden konnte, überprüfen Sie die Konfiguration in der Datei "META-INF/context.xml". Weitere Informationen finden Sie die Log-Datei "catalina.out".</label>
+			<separator height="3px"/>
+			<label>Wenn Sie an keiner Dienststelle angemeldet sind, versuchen Sie sich mit ihren korrekten Login-Daten </label>
+			<label style="color:blue; text-decoration:underline; cursor:pointer;"
+					onClick="redirect()">anzumelden.</label>
+			<separator height="3px"/>
+			<label>Falls Sie zwar angemeldet sind, aber keine Personen verwalten können, sind die Daten ihrer Dienststelle vermutlich unvollständig oder fehlerhaft. Überprüfen Sie die Tabellen "tPerson" und "tPersonDepartment".</label>
+			<separator height="3px"/>
+			<label>Falls die Darstellung der Seite seltsam wirkt (kein Rand um dieses Fenster etc.), überprüfen Sie, ob sich Helios im root-Verzeichnis ihres Webservers befindet (z.B. "www.webserver.at/helios"). Instanzen, die sich nicht im root-Verzeichnis eines Webservers (bzw. einer Subdomain eines Webservers) liegen, können momentan nicht unterstützt werden.</label>		
+	</window>
+</div>
+</zk>

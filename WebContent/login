@@ -1,0 +1,9 @@
+<?page title="Helios - Login" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<div
+		style="margin: 0 auto; width: 350px; padding-top:10%; vertical-align: middle;">
+		<window title="Login" border="normal"
+			use="at.helios.security.LoginWindow" width="310px">
+		</window>
+	</div>
+</zk>

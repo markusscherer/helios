@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jasperReport PUBLIC "-//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport name="ShiftHeading" pageWidth="155"
+	pageHeight="372" leftMargin="0" rightMargin="0" topMargin="0"
+	bottomMargin="0" columnWidth="372">
+	
+	<field name="Medi" class="java.lang.String" />
+	<field name="Driver" class="java.lang.String" />
+	<field name="Additional" class="java.lang.String" />
+	
+	<detail>
+		<band height="12">
+			<textField hyperlinkType="None">
+				<reportElement x="0" y="0" width="31" height="12" />
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" />
+					<leftPen lineWidth="0.0" lineStyle="Solid" />
+					<bottomPen lineWidth="0.5" lineStyle="Solid" />
+					<rightPen lineWidth="0.5" lineStyle="Solid" />
+				</box>
+				<textElement verticalAlignment="Middle" textAlignment="Center">
+					<font fontName="Arial" size="9" pdfFontName="/opt/eclipse_Helios/workspace/Helios/WebContent/fonts/arial.ttf"
+						isPdfEmbedded="true" />
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Medi}]]></textFieldExpression>
+			</textField>
+			<textField hyperlinkType="None">
+				<reportElement x="31" y="0" width="31" height="12" />
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" />
+					<leftPen lineWidth="0.0" lineStyle="Solid" />
+					<bottomPen lineWidth="0.5" lineStyle="Solid" />
+					<rightPen lineWidth="0.5" lineStyle="Solid" />
+				</box>
+				<textElement verticalAlignment="Middle" textAlignment="Center">
+					<font fontName="Arial" size="9" pdfFontName="/opt/eclipse_Helios/workspace/Helios/WebContent/fonts/arial.ttf"
+						isPdfEmbedded="true" />
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+            <!-- PH -->
+			<textField hyperlinkType="None">
+				<reportElement x="62" y="0" width="31" height="12" />
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" />
+					<leftPen lineWidth="0.0" lineStyle="Solid" />
+					<bottomPen lineWidth="0.5" lineStyle="Solid" />
+					<rightPen lineWidth="0.5" lineStyle="Solid" />
+				</box>
+				<textElement verticalAlignment="Middle" textAlignment="Center">
+					<font fontName="Arial" size="9" pdfFontName="/opt/eclipse_Helios/workspace/Helios/WebContent/fonts/arial.ttf"
+						isPdfEmbedded="true" />
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Additional}]]></textFieldExpression>
+			</textField>
+			<textField hyperlinkType="None">
+				<reportElement x="93" y="0" width="31" height="12" />
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" />
+					<leftPen lineWidth="0.0" lineStyle="Solid" />
+					<bottomPen lineWidth="0.5" lineStyle="Solid" />
+					<rightPen lineWidth="0.5" lineStyle="Solid" />
+				</box>
+				<textElement verticalAlignment="Middle" textAlignment="Center">
+					<font fontName="Arial" size="9" pdfFontName="/opt/eclipse_Helios/workspace/Helios/WebContent/fonts/arial.ttf"
+						isPdfEmbedded="true" />
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Driver}]]></textFieldExpression>
+			</textField>
+			<textField hyperlinkType="None">
+				<reportElement x="124" y="0" width="31" height="12" />
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" />
+					<leftPen lineWidth="0.0" lineStyle="Solid" />
+					<bottomPen lineWidth="0.5" lineStyle="Solid" />
+					<rightPen lineWidth="1.1" lineStyle="Solid" />
+				</box>
+				<textElement verticalAlignment="Middle" textAlignment="Center">
+					<font fontName="Arial" size="9" pdfFontName="/opt/eclipse_Helios/workspace/Helios/WebContent/fonts/arial.ttf"
+						isPdfEmbedded="true" />
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

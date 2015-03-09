@@ -1,0 +1,7 @@
+<?page id="testZul" title="RuleEdit" cacheable="false"
+    language="xul/html" zscriptLanguage="Java" contentType="text/html;charset=UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
+<zk>
+	<groupbox use="at.helios.statistics.components.ComplexQueryBox">
+	</groupbox>
+</zk>

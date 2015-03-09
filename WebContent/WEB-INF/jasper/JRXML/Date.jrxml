@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jasperReport PUBLIC "-//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport name="ShiftHeading" pageWidth="20"
+    pageHeight="372" leftMargin="0" rightMargin="0" topMargin="0"
+    bottomMargin="0" columnWidth="20">
+    
+    <field name="Date" class="java.lang.String" />
+    
+    <detail>
+        <band height="12">
+            <textField hyperlinkType="None">
+                <reportElement x="0" y="0" width="20" height="12" />
+                <box>
+                    <topPen lineWidth="0.0" lineStyle="Solid" />
+                    <leftPen lineWidth="1.1" lineStyle="Solid" />
+                    <bottomPen lineWidth="1.1" lineStyle="Solid" />
+                    <rightPen lineWidth="1.1" lineStyle="Solid" />
+                </box>
+                <textElement verticalAlignment="Middle" textAlignment="Center">
+                    <font fontName="Arial" size="9" pdfFontName="/opt/eclipse_Helios/workspace/Helios/WebContent/fonts/arial.ttf"
+                        isPdfEmbedded="true" />
+                </textElement>
+                <textFieldExpression class="java.lang.String"><![CDATA[$F{Date}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+</jasperReport>

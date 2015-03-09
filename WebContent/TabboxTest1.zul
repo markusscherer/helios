@@ -1,0 +1,14 @@
+<?page title="TabboxTest" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<separator />
+	<tabbox orient="vertical" width="400px">
+		<tabs width="80px">
+			<tab label="TestTab 1" />
+			<tab label="TestTab 2" />
+		</tabs>
+		<tabpanels>
+			<tabpanel>TestContent 1</tabpanel>
+			<tabpanel>TestContent 2</tabpanel>
+		</tabpanels>
+	</tabbox>
+</zk>

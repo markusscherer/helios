@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jasperReport PUBLIC "-//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport name="ShiftHeading" pageWidth="124"
+	pageHeight="40" leftMargin="0" rightMargin="0" topMargin="0"
+	bottomMargin="0" columnWidth="124">
+
+	<parameter name="Shift" class="java.lang.String"></parameter>
+	<pageHeader>
+		<band height="40">
+			<textField hyperlinkType="None">
+				<reportElement x="0" y="0" width="124" height="20" />
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" />
+					<leftPen lineWidth="0.0" lineStyle="Solid" />
+					<bottomPen lineWidth="1.1" lineStyle="Solid" />
+					<rightPen lineWidth="1.1" lineStyle="Solid" />
+				</box>
+				<textElement verticalAlignment="Middle" textAlignment="Center">
+					<font fontName="Arial" size="10"
+						pdfFontName="FONT_PATH/fonts/arialbd.ttf"
+						isPdfEmbedded="true" />
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{Shift}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="20" width="31" height="20" />
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" />
+					<leftPen lineWidth="0.0" lineStyle="Solid" />
+					<bottomPen lineWidth="1.1" lineStyle="Solid" />
+					<rightPen lineWidth="1.1" lineStyle="Solid" />
+				</box>
+				<textElement verticalAlignment="Middle" textAlignment="Center">
+					<font fontName="Arial" size="10" isBold="true"
+						pdfFontName="FONT_PATH/fonts/arialbd.ttf"
+						isPdfEmbedded="true" />
+				</textElement>
+				<text><![CDATA[NFS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="31" y="20" width="31" height="20" />
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" />
+					<leftPen lineWidth="0.0" lineStyle="Solid" />
+					<bottomPen lineWidth="1.1" lineStyle="Solid" />
+					<rightPen lineWidth="1.1" lineStyle="Solid" />
+				</box>
+				<textElement verticalAlignment="Middle" textAlignment="Center">
+					<font fontName="Arial" size="10" isBold="true"
+						pdfFontName="FONT_PATH/fonts/arialbd.ttf"
+						isPdfEmbedded="true" />
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="62" y="20" width="31" height="20" />
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" />
+					<leftPen lineWidth="0.0" lineStyle="Solid" />
+					<bottomPen lineWidth="1.1" lineStyle="Solid" />
+					<rightPen lineWidth="1.1" lineStyle="Solid" />
+				</box>
+				<textElement verticalAlignment="Middle" textAlignment="Center">
+					<font fontName="Arial" size="10" isBold="true"
+						pdfFontName="FONT_PATH/fonts/arialbd.ttf"
+						isPdfEmbedded="true" />
+				</textElement>
+				<text><![CDATA[NEF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="93" y="20" width="31" height="20" />
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" />
+					<leftPen lineWidth="0.0" lineStyle="Solid" />
+					<bottomPen lineWidth="1.1" lineStyle="Solid" />
+					<rightPen lineWidth="1.1" lineStyle="Solid" />
+				</box>
+				<textElement verticalAlignment="Middle" textAlignment="Center">
+					<font fontName="Arial" size="10" isBold="true"
+						pdfFontName="FONT_PATH/fonts/arialbd.ttf"
+						isPdfEmbedded="true" />
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+</jasperReport>

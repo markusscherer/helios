@@ -1,0 +1,15 @@
+<?page title="Ressource nicht gefunden" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<zscript> void redirect() {
+		if(!at.helios.security.AuthenticationManager.isValidSession()) {
+		Executions.sendRedirect(at.helios.common.RedirectHelper.getLoginLink()); } }; </zscript>
+	<div
+		style="margin: 0 auto; width: 350px; padding-top:10%; vertical-align: middle;">
+		<window title="Nicht gefunden" border="normal" width="300px">
+			Die angefragte Seite wurde nicht auf dem Server gefunden.
+			<separator />
+			<label style="color:blue; text-decoration:underline; cursor:pointer;"
+				onClick="redirect()">Weiter zum Login-Screen</label>
+		</window>
+	</div>
+</zk>

@@ -1,0 +1,174 @@
+<?page title="[Helios] Installation" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<div
+		style="margin: 0 auto; width: 750px; padding-top:5%; vertical-align: middle;">
+		<window title="[Helios] Installation" border="normal"
+			id="installation" use="at.helios.common.InstallerWindow">
+			<grid>
+				<columns visible="false">
+					<column width="30%"/>
+					<column />
+				</columns>
+				<rows>
+					<group label="Datenbankverbindung einrichten" />
+					<row>
+						<label value="Datenbankname" />
+						<hbox align="center">
+							<textbox id="databasename"
+								onChange="installation.onCheckDatabasename()" />
+							<image id="databasenameimg"
+								src="/design/status_ok.png" />
+							<label id="databasenameerr" />
+						</hbox>
+					</row>
+					<row>
+						<label value="Host" />
+						<hbox align="center">
+							<textbox id="host" value="localhost"
+								onChange="installation.onCheckHost()" />
+							<image id="hostimg"
+								src="/design/status_ok.png" />
+							<label id="hosterr" />
+						</hbox>
+					</row>
+					<row>
+
+						<label value="Port" />
+						<hbox align="center">
+							<intbox id="port" value="3306"
+								onChange="installation.onCheckPort()" />
+							<image id="portimg"
+								src="/design/status_ok.png" />
+							<label id="porterr" />
+						</hbox>
+					</row>
+					<row>
+						<label value="Benutzername" />
+						<hbox align="center">
+							<textbox id="username"
+								onChange="installation.onCheckUsername()" />
+							<image id="usernameimg"
+								src="/design/status_ok.png" />
+							<label id="usernameerr" />
+						</hbox>
+					</row>
+					<row>
+						<label value="Passwort" />
+						<hbox align="center">
+							<textbox type="password" id="password"
+								onChange="installation.onCheckPassword()" />
+							<image id="passwordimg"
+								src="/design/status_ok.png" />
+							<label id="passworderr" />
+						</hbox>
+					</row>
+					<row>
+						<label value="Passwort (bestätigen)"
+							onChange="installation.onCheckConfirmPassword()" />
+						<hbox align="center">
+							<textbox type="password"
+								id="confirmpassword" />
+							<image id="confirmpasswordimg"
+								src="/design/status_ok.png" />
+							<label id="confirmpassworderr" />
+						</hbox>
+					</row>
+					<row spans="2" align="right">
+						<button label="Änderungen übernehmen"
+							onClick="installation.onDatabaseFinish()" />
+					</row>
+					<group label="Datenbanktreiber installieren" />
+					<row spans="2">
+						<vbox>
+							<label
+								value="Kopieren Sie nun einen geeigneten MySQL-Connector in das Lib-Verzeichnis 
+				ihrer Tomcat-Instanz und starten Sie sie neu. Wenn die Tomcat-Instanz wieder gestartet ist, 
+				laden diese Seite neu." />
+							<separator />
+							<label
+								value="Falls die Datenbanktreiberstatus-Anzeige grün bereits ist, überspringen Sie diesen Punkt." />
+						</vbox>
+					</row>
+					<row>
+						<label value="Datenbanktreiberstatus" />
+						<hbox align="center">
+							<image id="connectorimg"
+								src="/design/status_ok.png" />
+							<label id="connectorerr" value=""
+								onCreate="installation.onCheckConnector()" />
+						</hbox>
+					</row>
+					<group label="Dienststelle einrichten" />
+					<row>
+						<label value="Dienstellenname" />
+						<hbox align="center">
+							<textbox id="departmentname"
+								onChange="installation.onCheckDepartmentName()" />
+							<image id="departmentnameimg"
+								src="/design/status_ok.png" />
+							<label id="departmenterr" />
+						</hbox>
+					</row>
+					<row>
+						<label value="Dienststellenpasswort" />
+						<hbox align="center">
+							<textbox id="departmentpassword"
+								type="password"
+								onChange="installation.onCheckDepartmentPassword()" />
+							<image id="departmentpasswordimg"
+								src="/design/status_ok.png" />
+							<label id="departmentpassworterr" />
+						</hbox>
+					</row>
+					<row>
+						<label
+							value="Dienststellenpasswort (bestätigen)" />
+						<hbox align="center">
+							<textbox id="departmentpasswordconfirm"
+								type="password"
+								onChange="installation.onCheckDepartmentConfirmPassword()" />
+							<image id="departmentpasswordconfirmimg"
+								src="/design/status_ok.png" />
+							<label id="departmentpasswordconfirmerr" />
+						</hbox>
+					</row>
+					<row>
+						<label value="Anzahl RTW-Teams" />
+						<hbox align="center">
+							<intbox id="rtwcount" value="2"
+								onChange="installation.onCheckRTWCount()" />
+							<image id="rtwcountimg"
+								src="/design/status_ok.png" />
+							<label id="rtwcounterr" />
+						</hbox>
+					</row>
+					<row>
+
+						<label value="Anzahl NEF-Teams" />
+						<hbox align="center">
+							<intbox id="nefcount" value="1"
+								onChange="installation.onCheckNEFCount()" />
+							<image id="nefcountimg"
+								src="/design/status_ok.png" />
+							<label id="nefcounterr" />
+						</hbox>
+					</row>
+					<row>
+						<label value="Anzahl Bereitschafts-Teams" />
+						<hbox align="center">
+							<intbox id="stbcount" value="0"
+								onChange="installation.onCheckSTBCount()" />
+							<image id="stbcountimg"
+								src="/design/status_ok.png" />
+							<label id="stbcounterr" />
+						</hbox>
+					</row>
+					<row spans="2" align="right">
+						<button label="Dienststelle einrichten"
+							onClick="installation.onDepartmentFinish();" />
+					</row>
+				</rows>
+			</grid>
+		</window>
+	</div>
+</zk>

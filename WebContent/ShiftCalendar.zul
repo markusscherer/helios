@@ -1,0 +1,43 @@
+<?page id="testZul" title="Arbeitsplan Kalender" cacheable="false" 
+	language="xul/html" zscriptLanguage="Java" contentType="text/html;charset=UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
+
+
+<?link rel="stylesheet" type="text/css" href="./design/ShiftCalendar.css"?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:h="http://www.w3.org/1999/xhtml"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<window id="CalWin" border="normal">
+		<window id="settingBox" title="Settings" border="normal"
+			style="max-width: 250px;" position="right,bottom" closable="false"
+			minimizable="true" maximizable="true" mode="overlapped">
+			<columnlayout>
+				<columnchildren style="padding: 5px">
+					<panel style="margin-bottom:10px" title="Settings" border="normal"
+						collapsible="true">
+						<panelchildren>
+							<grid>
+								<rows use="at.helios.calendar.CalendarSettings">
+								</rows>
+							</grid>
+							<label value="Fehler!" style="color: red" visible="false"
+								id="error" />
+						</panelchildren>
+					</panel>
+					<panel style="margin-bottom:10px" title="RTW" border="normal"
+						collapsible="true">
+						<panelchildren>
+							<listbox id="RTW" use="at.helios.calendar.FreeWorkers" />
+						</panelchildren>
+					</panel>
+					<panel style="margin-bottom:10px" title="NEF" border="normal"
+						collapsible="true">
+						<panelchildren>
+							<listbox id="NEF" use="at.helios.calendar.FreeWorkers" />
+						</panelchildren>
+					</panel>
+				</columnchildren>
+			</columnlayout>
+		</window>
+	</window>
+</zk>

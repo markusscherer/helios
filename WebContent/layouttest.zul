@@ -1,0 +1,35 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<listbox width="270px">
+		<listitem>
+			<listcell style="padding:3px">Von</listcell>
+			<listcell style="padding:3px">
+				<datebox />
+			</listcell>
+		</listitem>
+		<listitem>
+			<listcell label="Bis" />
+			<listcell style="padding:3px">
+				<datebox />
+			</listcell>
+		</listitem>
+		<listitem>
+			<listcell style="padding:3px"> NEF-Teams </listcell>
+			<listcell style="padding:3px">
+				<intbox></intbox>
+			</listcell>
+		</listitem>
+		<listitem>
+			<listcell style="padding:3px"> RTW-Teams </listcell>
+			<listcell style="padding:3px">
+				<intbox></intbox>
+			</listcell>
+		</listitem>
+		<listitem>
+			<listcell style="padding:3px"> Bereitschaft-Teams </listcell>
+			<listcell style="padding:3px">
+				<intbox></intbox>
+			</listcell>
+		</listitem>
+	</listbox>
+</zk>

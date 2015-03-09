@@ -1,0 +1,7 @@
+<?page title="halligalli" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="halligalli" border="normal">
+<label id="msg">test</label>
+<textbox use="at.helios.common.SmallPersonBox"></textbox>
+</window>
+</zk>

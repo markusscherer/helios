@@ -1,0 +1,35 @@
+<?page id="testZul" title="Helios Login" cacheable="false" 
+	language="xul/html" zscriptLanguage="Java" contentType="text/html;charset=UTF-8"?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:h="http://www.w3.org/1999/xhtml"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	<div
+		style="margin: 0 auto; width: 350px; padding-top:100px; vertical-align: middle;">
+		<div style="z-index: 8;">
+			<image src="./design/pictures/logo.jpg" style="margin-left: -100px; margin-bottom:0px;" />
+		</div>
+		<div style="margin-top: 0px; z-index: 2;">
+			<window title="Login" border="normal"
+				use="at.helios.security.Authentication">
+				<div style="padding:25px 32px 25px 32px;">
+					<grid>
+						<rows>
+							<row>
+								<label value="Username" />
+								<textbox type="text" id="username" constraint="no empty" />
+							</row>
+							<row>
+								<label value="Password" />
+								<textbox type="password" id="password" constraint="no empty" />
+							</row>
+							<row>
+								<label value="" />
+								<button label="login" forward="onLogin" />
+							</row>
+						</rows>
+					</grid>
+				</div>
+			</window>
+		</div>
+	</div>
+</zk>
